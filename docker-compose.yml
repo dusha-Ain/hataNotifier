@@ -1,0 +1,14 @@
+services:
+
+  postgres:
+    image: "postgres"
+    platform: linux/amd64
+    container_name: bd_postgres_hata_notifier
+    environment:
+      POSTGRES_USER: notifier
+      POSTGRES_PASSWORD: notifier
+      POSTGRES_DB: notifier
+    ports:
+      - 5436:5432
+    labels:
+      org.springframework.boot.service-connection: postgres
